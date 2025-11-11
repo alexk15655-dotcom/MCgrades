@@ -20,6 +20,7 @@ export default {
     addGroup: 'Yangi guruh qoʻshish',
     deleteGroup: "Guruhni o'chirish",
     deleteConfirm: '"{name}" guruhini oʻchirishni xohlaysizmi? Bu amalni qaytarib boʻlmaydi.',
+    cantDeleteLastGroup: 'Oxirgi guruhni oʻchirib boʻlmaydi',
     groupId: 'Guruh ID',
     groupName: 'Guruh nomi',
     whiteList: '"{name}" guruhining ruxsat etilganlar roʻyxati',
@@ -34,11 +35,10 @@ export default {
     nextLevelRequirements: 'Keyingi {level} darajasiga otish uchun talab qilinadi',
     totalProgress: 'Keyingi darajagacha umumiy progress',
     newBonuses: 'Keyingi darajadagi yangi bonuslar',
-    currentProgress: 'Hozirgi progress darajalar bo‘yicha',
-    noBonuses: 'Mavjud bonuslar yo‘q',
+    currentProgress: 'Hozirgi progress darajalar bo'yicha',
+    noBonuses: 'Mavjud bonuslar yo'q',
     newBonusesAtLevel: 'Ushbu darajadagi yangi bonuslar',
     requirements: 'Talablar',
-
   },
   bonuses: {
     balanceControl: 'Balans nazorati',

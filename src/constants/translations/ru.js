@@ -20,6 +20,7 @@ export default {
     addGroup: 'Добавить новую группу',
     deleteGroup: 'Удаление группы',
     deleteConfirm: 'Вы уверены, что хотите удалить группу "{name}"? Это действие нельзя отменить.',
+    cantDeleteLastGroup: 'Невозможно удалить последнюю группу',
     groupId: 'ID группы',
     groupName: 'Название группы',
     whiteList: 'White List группы "{name}"',

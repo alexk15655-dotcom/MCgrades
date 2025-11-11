@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import LanguageSwitch from './LanguageSwitch';
-
-const ADMIN = { id: 'ADMIN', password: '12345' };
-const PROMO_KEYWORDS = ['GOALS', 'PROMO'];  // Добавить здесь
-
+import { ADMIN, PROMO_KEYWORDS } from '../constants/auth';
 
 const LoginForm = ({ onLogin, groups }) => {
   const { t } = useTranslation();
@@ -19,31 +16,29 @@ const LoginForm = ({ onLogin, groups }) => {
   };
 
   const parseInput = (input) => {
-    const parts = input.split(',').map(part => part.trim());
-    // В начало функции parseInput добавить:
     if (input.includes(':')) {
       const [id, keyword] = input.split(':').map(part => part.trim().toUpperCase());
-    if (PROMO_KEYWORDS.includes(keyword)) {
-      return {
-      posId: id,
-      isGoalsPage: true
-      };
+      if (PROMO_KEYWORDS.includes(keyword)) {
+        return {
+          posId: id,
+          isGoalsPage: true
+        };
+      }
     }
-}
+
+    const parts = input.split(',').map(part => part.trim());
     
-    // Если частей больше 1, считаем это вводом с метриками
     if (parts.length > 1 && parts.length === 4) {
       return {
         posId: parts[0],
         metrics: {
-          deposits: Number(parts[1]),
-          prepayments: Number(parts[2]),
-          users: Number(parts[3])
+          deposits: Number(parts[1]) || 0,
+          prepayments: Number(parts[2]) || 0,
+          users: Number(parts[3]) || 0
         }
       };
     }
     
-    // Иначе считаем это просто ID кассы
     return {
       posId: parts[0],
       metrics: null
@@ -58,7 +53,6 @@ const LoginForm = ({ onLogin, groups }) => {
       return;
     }
 
-    // Деструктурируем все нужные поля из результата parseInput
     const { posId: parsedPosId, metrics, isGoalsPage } = parseInput(posId);
 
     if (parsedPosId === ADMIN.id) {
@@ -79,7 +73,7 @@ const LoginForm = ({ onLogin, groups }) => {
       posId: parsedPosId, 
       isAdmin: false, 
       isLoggedIn: true,
-      isGoalsPage: isGoalsPage || false,  // теперь isGoalsPage определен
+      isGoalsPage: isGoalsPage || false,
       initialMetrics: metrics || { deposits: 0, prepayments: 0, users: 0 }
     });
   };

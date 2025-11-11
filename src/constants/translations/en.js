@@ -20,6 +20,7 @@ export default {
     addGroup: 'Add new group',
     deleteGroup: 'Delete group',
     deleteConfirm: 'Are you sure you want to delete group "{name}"? This action cannot be undone.',
+    cantDeleteLastGroup: 'Cannot delete the last group',
     groupId: 'Group ID',
     groupName: 'Group name',
     whiteList: 'White List of group "{name}"',
@@ -37,8 +38,7 @@ export default {
     currentProgress: 'Current progress by levels',
     noBonuses: 'No available bonuses',
     newBonusesAtLevel: 'New bonuses at this level',
-     requirements: 'Requirements',
-
+    requirements: 'Requirements',
   },
   bonuses: {
     balanceControl: 'Balance Control',

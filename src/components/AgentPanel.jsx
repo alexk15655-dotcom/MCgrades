@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Store, Award, Wallet, Users, CreditCard, LogOut, AlertCircle, Check, ArrowRight } from 'lucide-react';
+import { Store, Award, Wallet, Users, CreditCard, LogOut, AlertCircle, Check } from 'lucide-react';
 import { useLevelCalculation } from '../hooks/useLevelCalculation';
 import { useTranslation } from '../hooks/useTranslation';
 import LanguageSwitch from './LanguageSwitch';
 import LevelsProgressBar from './LevelsProgressBar';
-
-const ADMIN = { id: 'ADMIN', password: '12345' };
-const PROMO_KEYWORDS = ['GOALS', 'PROMO'];
+import { ADMIN, PROMO_KEYWORDS } from '../constants/auth';
 
 const MetricsInput = ({ metrics, onChange }) => {
   const { t, isRTL } = useTranslation();
@@ -214,9 +212,9 @@ const LoginForm = ({ onLogin, groups }) => {
       return {
         posId: parts[0],
         metrics: {
-          deposits: Number(parts[1]),
-          prepayments: Number(parts[2]),
-          users: Number(parts[3])
+          deposits: Number(parts[1]) || 0,
+          prepayments: Number(parts[2]) || 0,
+          users: Number(parts[3]) || 0
         }
       };
     }

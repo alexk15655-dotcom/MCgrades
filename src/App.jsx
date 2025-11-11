@@ -23,8 +23,8 @@ const App = () => {
     try {
       const savedGroups = localStorage.getItem('groups');
       return savedGroups ? JSON.parse(savedGroups) : INITIAL_GROUPS;
-    } catch {
-      console.error('Failed to load groups from localStorage');
+    } catch (error) {
+      console.error('Failed to load groups from localStorage:', error);
       return INITIAL_GROUPS;
     }
   });
@@ -45,6 +45,9 @@ const App = () => {
       localStorage.setItem('groups', JSON.stringify(newGroups));
     } catch (error) {
       console.error('Failed to save groups to localStorage:', error);
+      if (error.name === 'QuotaExceededError') {
+        alert('Storage quota exceeded. Please clear some data.');
+      }
     }
 
     if (newSelectedId) {

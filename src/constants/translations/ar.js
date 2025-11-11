@@ -20,6 +20,7 @@ export default {
     addGroup: 'إضافة مجموعة جديدة',
     deleteGroup: 'حذف المجموعة',
     deleteConfirm: 'هل أنت متأكد أنك تريد حذف المجموعة "{name}"؟ لا يمكن التراجع عن هذا الإجراء.',
+    cantDeleteLastGroup: 'لا يمكن حذف المجموعة الأخيرة',
     groupId: 'معرف المجموعة',
     groupName: 'اسم المجموعة',
     whiteList: 'القائمة البيضاء للمجموعة "{name}"',
@@ -38,7 +39,6 @@ export default {
     noBonuses: 'لا توجد مكافآت متاحة',
     newBonusesAtLevel: 'المكافآت الجديدة في هذا المستوى',
     requirements: 'المتطلبات',
-
   },
   bonuses: {
     balanceControl: 'التحكم بالرصيد',

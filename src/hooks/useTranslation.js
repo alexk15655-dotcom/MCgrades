@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { LanguageContext } from '../contexts/LanguageContext';
 
 export const useTranslation = () => {
-  const { translations, language, changeLanguage, availableLanguages } = useContext(LanguageContext);
+  const { translations, language, changeLanguage, availableLanguages, isRTL } = useContext(LanguageContext);
 
   const t = (key, params = {}) => {
     const keys = key.split('.');
@@ -16,7 +16,6 @@ export const useTranslation = () => {
       }
     }
 
-    // Замена параметров в строке перевода
     if (typeof value === 'string') {
       return Object.entries(params).reduce(
         (str, [param, val]) => str.replace(`{${param}}`, val),
@@ -31,6 +30,7 @@ export const useTranslation = () => {
     t,
     language,
     changeLanguage,
-    availableLanguages
+    availableLanguages,
+    isRTL
   };
 };

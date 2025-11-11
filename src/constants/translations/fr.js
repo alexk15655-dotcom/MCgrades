@@ -20,6 +20,7 @@ export default {
     addGroup: 'Ajouter un nouveau groupe',
     deleteGroup: 'Supprimer le groupe',
     deleteConfirm: 'Êtes-vous sûr de vouloir supprimer le groupe "{name}" ? Cette action ne peut pas être annulée.',
+    cantDeleteLastGroup: 'Impossible de supprimer le dernier groupe',
     groupId: 'ID du groupe',
     groupName: 'Nom du groupe',
     whiteList: 'Liste blanche du groupe "{name}"',
@@ -38,7 +39,6 @@ export default {
     noBonuses: 'Aucun bonus disponible',
     newBonusesAtLevel: 'Nouveaux bonus à ce niveau',
     requirements: 'Conditions',
-
   },
   metrics: {
     deposits: 'Dépôts',
